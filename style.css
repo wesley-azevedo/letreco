@@ -1,0 +1,84 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(2, 2, 2);
+    height: 100vh;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    color: black;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+}
+
+.tabelaInputValores {
+    display: flex;
+    justify-content: center;
+}
+
+.topo {
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.inputValor {
+    border: none;
+    border-radius: 5px;
+    background-color: #161616;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: lowercase;
+    cursor: default;
+    margin: 3px;
+}
+
+input.letraTeclado{
+    background-color: black;
+    border: solid 0.5px #363636;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    color: #a5a5a5;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+input.letraTeclado:hover{
+    background-color: white;
+    color:#161616;
+}
+
+input.botaoFuncao{
+    background-color: black;
+    border: solid 0.5px #363636;
+    border-radius: 5px;
+    color: #a5a5a5;
+    text-transform: lowercase;
+    margin-top: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input.botaoFuncao:hover{
+    background-color: white;
+    color:#161616;
+}
+
+input.botaoFuncao#botaoConfirmar:hover{
+    background-color: #009f03;
+    color:#ffffff;
+}
+
+input.letraTeclado {
+    margin-top: 10px;
+}

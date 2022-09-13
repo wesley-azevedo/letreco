@@ -1,75 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
     <title>let-treco</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <h1>
-            <span style="color: magenta;">let </span>
-            <span style="color: red;">t</span>
-            <span style="color: green;">r</span>
-            <span style="color: blue;">e</span>
-            <span style="color: yellow;">c</span>
-            <span style="color: cyan;">o</span>
-        </h1>
-    </header>
-    <section>
-        <div>
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <header>
+      <div class="topo">
+      <span style="color: cyan;">let </span>
+      <span style="color: red; padding: 0;">t</span>
+      <span style="color: #009f03; margin: 0">r</span>
+      <span style="color: rgb(0, 51, 255); margin: 0">e</span>
+      <span style="color: yellow;" margin: 0>c</span>
+      <span style="color: magenta" margin: 0>o </span>
+      <span style="color: white">= </span>
+      <span style="color: orangered">"?"</span>
+    </div>
+  </header>
+  <main>
+    <section class="espaçoLetras">
+      <div>  
+        <table class="tabelaInputValores">
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="tent1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="tent2"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="tent3"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="tent4"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="tent5" onchange="tentativa1()"></td>
+          </tr>
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+          </tr>
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+          </tr>
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+          </tr>
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+          </tr>
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="letra1"></td>
+          </tr>
+        </table>
+      </div>
     </section>
-    <footer>
-
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-</body>
+    <section class="funcoes">
+      <div>
+        <input type="button" value="APAGAR" class="botaoFuncao" id="botaoApagar">
+        <input type="button" value="CONFIRMAR" class="botaoFuncao" id="botaoConfirmar"> 
+      </div>
+    </section>
+    <section class="teclado">
+      <div>  
+        <input type="button" value="Q" class="letraTeclado" id="letraQ">
+        <input type="button" value="W" class="letraTeclado" id="letraW">
+        <input type="button" value="E" class="letraTeclado" id="letraE">
+        <input type="button" value="R" class="letraTeclado" id="letraR">
+        <input type="button" value="T" class="letraTeclado" id="letraT">
+        <input type="button" value="Y" class="letraTeclado" id="letraY">
+        <input type="button" value="U" class="letraTeclado" id="letraU">
+        <input type="button" value="I" class="letraTeclado" id="letraI">
+        <input type="button" value="O" class="letraTeclado" id="letraO">
+        <input type="button" value="P" class="letraTeclado" id="letraP">
+      </div>
+      <div>  
+        <input type="button" value="A" class="letraTeclado" id="letraA">
+        <input type="button" value="S" class="letraTeclado" id="letraS">
+        <input type="button" value="D" class="letraTeclado" id="letraD">
+        <input type="button" value="F" class="letraTeclado" id="letraF">
+        <input type="button" value="G" class="letraTeclado" id="letraG">
+        <input type="button" value="H" class="letraTeclado" id="letraH">
+        <input type="button" value="J" class="letraTeclado" id="letraI">
+        <input type="button" value="K" class="letraTeclado" id="letraJ">
+        <input type="button" value="L" class="letraTeclado" id="letraK">
+      </div>
+      <div>  
+        <input type="button" value="Z" class="letraTeclado" id="letraZ">
+        <input type="button" value="X" class="letraTeclado" id="letraX">
+        <input type="button" value="C" class="letraTeclado" id="letraC">
+        <input type="button" value="V" class="letraTeclado" id="letraV">
+        <input type="button" value="B" class="letraTeclado" id="letraB">
+        <input type="button" value="N" class="letraTeclado" id="letraN">
+        <input type="button" value="M" class="letraTeclado" id="letraM">
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
