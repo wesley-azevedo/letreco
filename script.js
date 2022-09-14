@@ -17,18 +17,29 @@ function tentativa1() {
        
         if (letraContida === true && letra === palavraRandomArray[i]) {
             console.log("Letra encontrada na mesma posicao");
-            document.getElementById(`tent${i}`).style.backgroundColor = 'green'
+            document.getElementById(`tent${i}`).style.backgroundColor = '#009f03';
+            document.getElementById(`${letra}`).style.backgroundColor = '#009f03';
         } else if (letraContida === true) {
             console.log("Letra encontrada em posicao diferente");
-            document.getElementById(`tent${i}`).style.backgroundColor = 'yellow'
-            document.getElementById(`tent${i}`).style.color = 'black'
+            document.getElementById(`tent${i}`).style.backgroundColor = 'yellow';
+            document.getElementById(`${letra}`).style.backgroundColor = 'yellow';
         } else {
-            document.getElementById(`tent${i}`).style.backgroundColor = 'red'
+            console.log("Letra não encontrada");
+            document.getElementById(`tent${i}`).style.backgroundColor = 'red';
+            document.getElementById(`${letra}`).style.backgroundColor = 'red';
+            
         }
+
+        document.getElementById(`tent${i}`).style.color = 'black';
+        document.getElementById(`${letra}`).style.color = 'black';
     } 
     
 }
 
+function resetar() {
+    location.reload();
+    
+}
 
 
 
