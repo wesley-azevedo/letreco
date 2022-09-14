@@ -30,8 +30,6 @@ function tentativa1() {
             
         }
 
-        document.getElementById(`tent${i}`).style.color = 'black';
-        document.getElementById(`${letra}`).style.color = 'black';
     } 
     
 }
