@@ -14,6 +14,9 @@ function tentativa1() {
 
         console.log(letra)
         console.log(letraContida)
+
+        document.getElementById(`tent${i}`).style.color = 'black';
+        document.getElementById(`${letra}`).style.color = 'black';
        
         if (letraContida === true && letra === palavraRandomArray[i]) {
             console.log("Letra encontrada na mesma posicao");
@@ -29,6 +32,7 @@ function tentativa1() {
             document.getElementById(`${letra}`).style.backgroundColor = 'red';
             
         }
+
 
     } 
     
