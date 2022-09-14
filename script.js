@@ -7,6 +7,31 @@ let palavraRandom = palavrasPossiveis[randomizacaoPalavra];
 //Transformação palavra em array de letras
 let palavraRandomArray = palavraRandom.split('')
 
+function tentativa1() {
+    for (let i = 0; i < palavraRandomArray.length; i++) {
+        let letra = document.getElementById(`tent${i}`).value;
+        let letraContida = palavraRandom.includes(`${letra}`)
+
+        console.log(letra)
+        console.log(letraContida)
+       
+        if (letraContida === true && letra === palavraRandomArray[i]) {
+            console.log("Letra encontrada na mesma posicao");
+            document.getElementById(`tent${i}`).style.backgroundColor = 'green'
+        } else if (letraContida === true) {
+            console.log("Letra encontrada em posicao diferente");
+            document.getElementById(`tent${i}`).style.backgroundColor = 'yellow'
+            document.getElementById(`tent${i}`).style.color = 'black'
+        } else {
+            document.getElementById(`tent${i}`).style.backgroundColor = 'red'
+        }
+    } 
+    
+}
+
+
+
+
 
 
 
