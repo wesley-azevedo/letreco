@@ -12,7 +12,6 @@ function tentativa1() {
         let letra = (document.getElementById(`tent${i}`).value).toLowerCase();
         let letraContida = palavraRandom.includes(`${letra}`)
 
-
         console.log(letra)
         console.log(letraContida)
 
@@ -34,8 +33,11 @@ function tentativa1() {
             
         }
 
-
     } 
+    
+}
+
+function linhaSeguinte() {
     
 }
 
@@ -43,6 +45,17 @@ function resetar() {
     location.reload();
     
 }
+
+function apagar() {
+
+}
+
+function cliqueTeclado() {
+    
+}
+
+
+
 
 
 
