@@ -9,8 +9,9 @@ let palavraRandomArray = palavraRandom.split('')
 
 function tentativa1() {
     for (let i = 0; i < palavraRandomArray.length; i++) {
-        let letra = document.getElementById(`tent${i}`).value;
+        let letra = (document.getElementById(`tent${i}`).value).toLowerCase();
         let letraContida = palavraRandom.includes(`${letra}`)
+
 
         console.log(letra)
         console.log(letraContida)
