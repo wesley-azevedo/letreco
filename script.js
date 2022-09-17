@@ -9,37 +9,50 @@ let palavraRandomArray = palavraRandom.split('')
 
 function tentativa1() {
     for (let i = 0; i < palavraRandomArray.length; i++) {
-        let letra = (document.getElementById(`tent${i}`).value).toLowerCase();
+        let letra = (document.getElementById(`campo${i}`).value).toLowerCase();
         let letraContida = palavraRandom.includes(`${letra}`)
+        let proximaLinha = String(i)+String(i)
+        let elementoLinhaAtual = document.getElementById(`campo${i}`)
+        let elementoProximaLinha = document.getElementById(`campo${proximaLinha}`)
 
         console.log(letra)
         console.log(letraContida)
 
-        document.getElementById(`tent${i}`).style.color = 'black';
+        document.getElementById(`campo${i}`).style.color = 'black';
         document.getElementById(`${letra}`).style.color = 'black';
        
         if (letraContida === true && letra === palavraRandomArray[i]) {
             console.log("Letra encontrada na mesma posicao");
-            document.getElementById(`tent${i}`).style.backgroundColor = '#009f03';
+            document.getElementById(`campo${i}`).style.backgroundColor = '#009f03';
             document.getElementById(`${letra}`).style.backgroundColor = '#009f03';
         } else if (letraContida === true) {
             console.log("Letra encontrada em posicao diferente");
-            document.getElementById(`tent${i}`).style.backgroundColor = 'yellow';
+            document.getElementById(`campo${i}`).style.backgroundColor = 'yellow';
             document.getElementById(`${letra}`).style.backgroundColor = 'yellow';
         } else {
             console.log("Letra não encontrada");
-            document.getElementById(`tent${i}`).style.backgroundColor = 'red';
+            document.getElementById(`campo${i}`).style.backgroundColor = 'red';
             document.getElementById(`${letra}`).style.backgroundColor = 'red';
             
         }
 
-    } 
-    
+        elementoLinhaAtual.disabled = true;
+        elementoProximaLinha.disabled = false;
+
+    }    
 }
 
-function linhaSeguinte() {
-    
-}
+
+
+
+
+
+
+
+
+
+
+
 
 function resetar() {
     location.reload();
