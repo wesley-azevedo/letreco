@@ -43,10 +43,8 @@ function tentativa1() {
 }
 
 
-
-
-
-
+//Ver index of
+//usar o número da linha no for
 
 
 
