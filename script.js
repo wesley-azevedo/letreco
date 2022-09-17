@@ -6,41 +6,77 @@ let randomizacaoPalavra = Math.floor(Math.random()*palavrasPossiveis.length);
 let palavraRandom = palavrasPossiveis[randomizacaoPalavra];
 //Transformação palavra em array de letras
 let palavraRandomArray = palavraRandom.split('')
+//Array da palavra contida na tentatiava atual
+let arrayPalavraAtual = []
+//Linha atual que começa em 0
+let linhaAtual = Number(0)
+//Quantidade de letras certas que começa em 0
+let letrasCertas = 0
 
-function tentativa1() {
+function confirmar() {
+    //For que irá rodar por todas as palavras
     for (let i = 0; i < palavraRandomArray.length; i++) {
-        let letra = (document.getElementById(`campo${i}`).value).toLowerCase();
+        let letra = (document.getElementById(`linha${linhaAtual}`+`campo${i}`).value).toLowerCase();
         let letraContida = palavraRandom.includes(`${letra}`)
-        let proximaLinha = String(i)+String(i)
-        let elementoLinhaAtual = document.getElementById(`campo${i}`)
-        let elementoProximaLinha = document.getElementById(`campo${proximaLinha}`)
+        let elementoLinhaAtual = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
+        
+        arrayPalavraAtual.push(letra);
 
+        console.log(arrayPalavraAtual)
         console.log(letra)
         console.log(letraContida)
 
-        document.getElementById(`campo${i}`).style.color = 'black';
+        document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.color = 'black';
         document.getElementById(`${letra}`).style.color = 'black';
        
         if (letraContida === true && letra === palavraRandomArray[i]) {
             console.log("Letra encontrada na mesma posicao");
-            document.getElementById(`campo${i}`).style.backgroundColor = '#009f03';
+            document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = '#009f03';
             document.getElementById(`${letra}`).style.backgroundColor = '#009f03';
+            letrasCertas++
         } else if (letraContida === true) {
             console.log("Letra encontrada em posicao diferente");
-            document.getElementById(`campo${i}`).style.backgroundColor = 'yellow';
+            document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = 'yellow';
             document.getElementById(`${letra}`).style.backgroundColor = 'yellow';
         } else {
             console.log("Letra não encontrada");
-            document.getElementById(`campo${i}`).style.backgroundColor = 'red';
-            document.getElementById(`${letra}`).style.backgroundColor = 'red';
-            
+            document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = 'red';
+            document.getElementById(`${letra}`).style.backgroundColor = 'red';  
+        }      
         }
 
-        elementoLinhaAtual.disabled = true;
-        elementoProximaLinha.disabled = false;
+    if (letrasCertas == 5) {
+        console.log(`Parabéns, você acertou! A palavra do dia era ${palavraRandom}.`)
+    } else if (letrasCertas < 5 && linhaAtual < 6){
+        linhaAtual++
+        console.log(linhaAtual)
+        console.log(`Não foi dessa vez. Você possui mais ${5 - linhaAtual} tentativa(s).`)
+        arrayPalavraAtual = []
+        console.log(arrayPalavraAtual)
 
-    }    
+        for (let i = 0; i <= 5; i++) {
+            elementoLinhaAtual = document.getElementById(`linha${linhaAtual - 1}`+`campo${i}`)
+            console.log(`Linha atual ${elementoLinhaAtual}.`)
+            elementoProximaLinha = linhaAtual = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
+            console.log(`Próxima linha ${elementoProximaLinha}.`)
+            elementoLinhaAtual.disabled = true;
+            elementoProximaLinha.disabled = false;
+        }
+
+
+
+    } else {
+        console.log(`Você não possui mais nenhumatentativa`)
+    }
+    
 }
+
+
+
+//let elementoProximaLinha = )
+//let proximaLinha = String(i)+String(i)
+//elementoLinhaAtual.disabled = true;
+//elementoProximaLinha.disabled = false;
 
 
 //Ver index of
@@ -72,7 +108,7 @@ function cliqueTeclado() {
 
 
 
-
+//Usar pontuacao e linha ++
 
 //Função para dar "refresh" na palavra
 
