@@ -45,12 +45,8 @@ function tentativa1() {
 
 //Ver index of
 //usar o número da linha no for
-
-
-
-
-
-
+//usar o tentativas++ linha++
+//quantidade de letras iguais para dizer se está certo (pontuação de 1 a 5)
 
 function resetar() {
     location.reload();
