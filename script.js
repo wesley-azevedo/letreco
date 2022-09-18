@@ -38,78 +38,47 @@ function confirmar() {
             console.log("Letra encontrada em posicao diferente");
             document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = 'yellow';
             document.getElementById(`${letra}`).style.backgroundColor = 'yellow';
+            letrasCertas = 0
         } else {
             console.log("Letra não encontrada");
             document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = 'red';
-            document.getElementById(`${letra}`).style.backgroundColor = 'red';  
+            document.getElementById(`${letra}`).style.backgroundColor = 'red';
+            letrasCertas = 0  
         }      
         }
 
     if (letrasCertas == 5) {
-        console.log(`Parabéns, você acertou! A palavra do dia era ${palavraRandom}.`)
-    } else if (letrasCertas < 5 && linhaAtual < 6){
+        alert(`Parabéns, você acertou! A palavra do dia era ${palavraRandom}.`)
+    } else if (letrasCertas < 5 && linhaAtual < 4){
         linhaAtual++
         console.log(linhaAtual)
-        console.log(`Não foi dessa vez. Você possui mais ${5 - linhaAtual} tentativa(s).`)
+        alert(`Não foi dessa vez. Você possui mais ${5 - linhaAtual} tentativa(s).`)
         arrayPalavraAtual = []
         console.log(arrayPalavraAtual)
-
-        for (let i = 0; i <= 5; i++) {
-            elementoLinhaAtual = document.getElementById(`linha${linhaAtual - 1}`+`campo${i}`)
-            console.log(`Linha atual ${elementoLinhaAtual}.`)
-            elementoProximaLinha = linhaAtual = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
-            console.log(`Próxima linha ${elementoProximaLinha}.`)
-            elementoLinhaAtual.disabled = true;
-            elementoProximaLinha.disabled = false;
-        }
-
-
-
+        liberarProximaLinha()
     } else {
-        console.log(`Você não possui mais nenhumatentativa`)
+        linhaAtual++
+        alert(`Você não possui mais nenhuma tentativa.`)
+        arrayPalavraAtual = []
+        console.log(arrayPalavraAtual)
     }
-    
 }
 
-
-
-//let elementoProximaLinha = )
-//let proximaLinha = String(i)+String(i)
-//elementoLinhaAtual.disabled = true;
-//elementoProximaLinha.disabled = false;
-
-
-//Ver index of
-//usar o número da linha no for
-//usar o tentativas++ linha++
-//quantidade de letras iguais para dizer se está certo (pontuação de 1 a 5)
+function liberarProximaLinha() {
+        for (let i = 0; i <= 6; i++) {
+        elementoLinhaAtual = document.getElementById(`linha${linhaAtual - 1}`+`campo${i}`)
+        console.log(`Linha atual ${elementoLinhaAtual}.`)
+        elementoProximaLinha = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
+        console.log(`Próxima linha ${elementoProximaLinha}.`)
+        elementoLinhaAtual.disabled = true;
+        elementoProximaLinha.disabled = false;
+    }   
+}
 
 function resetar() {
-    location.reload();
-    
+    location.reload();    
 }
 
-function apagar() {
+//function apagar() {}
 
-}
-
-function cliqueTeclado() {
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-//Usar pontuacao e linha ++
-
-//Função para dar "refresh" na palavra
-
-//Retorno parabéns
+//function cliqueTeclado() {}
