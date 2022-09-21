@@ -6,70 +6,75 @@ let randomizacaoPalavra = Math.floor(Math.random()*palavrasPossiveis.length);
 let palavraRandom = palavrasPossiveis[randomizacaoPalavra];
 //Transformação palavra em array de letras
 let palavraRandomArray = palavraRandom.split('')
-//Array da palavra contida na tentatiava atual
-let arrayPalavraAtual = []
 //Linha atual que começa em 0
 let linhaAtual = Number(0)
 //Quantidade de letras certas que começa em 0
-let letrasCertas = 0
 
 function confirmar() {
-    //For que irá rodar por todas as palavras
+    //Array da palavra contida na tentatiava atual
+    let palavraAtualArray = []
+    //Confirmação se a palavra testada existe
+    for (let i = 0; i < 5; i++) {
+        palavraAtualArray.push((document.getElementById(`linha${linhaAtual}`+`campo${i}`).value).toLowerCase());
+        palavraAtual = (palavraAtualArray.toString()).replaceAll(",","")
+    }
+    console.log(`A palavra testada é "${palavraAtual}".`)
+    //Caso exista, segue. Caso não, imprime um alerta.
+    if (palavrasPossiveis.includes(`${palavraAtual}`)) {
+        verificarLetras()
+    } else {
+        alert(`Parece que ${palavraAtual} não é uma palavra válida. Caso a sua palavra possua acentos e "ç", você pode retirá-los e/ou subistua o "ç" por "c". Caso não possua, tente outra palavra, por favor.`)
+    }
+    //Depois, coloca pra sumir uma linha de inputs pra quem tentar burlar.
+    palavraAtualArray = []
+}
+
+function verificarLetras() {
+    //Verificação das letras comparando a palavra atual com a palavra randomizada.
     for (let i = 0; i < palavraRandomArray.length; i++) {
         let letra = (document.getElementById(`linha${linhaAtual}`+`campo${i}`).value).toLowerCase();
         let letraContida = palavraRandom.includes(`${letra}`)
-        let elementoLinhaAtual = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
-        
-        arrayPalavraAtual.push(letra);
-
-        console.log(arrayPalavraAtual)
-        console.log(letra)
-        console.log(letraContida)
-
+        let letrasCertas = 0     
+                
         document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.color = 'black';
         document.getElementById(`${letra}`).style.color = 'black';
-       
+        
         if (letraContida === true && letra === palavraRandomArray[i]) {
-            console.log("Letra encontrada na mesma posicao");
+            console.log(`Letra "${letra}" encontrada na mesma posicao`);
             document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = '#009f03';
             document.getElementById(`${letra}`).style.backgroundColor = '#009f03';
             letrasCertas++
         } else if (letraContida === true) {
-            console.log("Letra encontrada em posicao diferente");
+            console.log(`Letra "${letra}" encontrada em posicao diferente.`);
             document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = 'yellow';
             document.getElementById(`${letra}`).style.backgroundColor = 'yellow';
-            letrasCertas = 0
         } else {
-            console.log("Letra não encontrada");
+            console.log(`Letra "${letra}" não encontrada.`);
             document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.backgroundColor = 'red';
             document.getElementById(`${letra}`).style.backgroundColor = 'red';
-            letrasCertas = 0  
         }      
-        }
-
+    }  
+    
     if (letrasCertas == 5) {
         alert(`Parabéns, você acertou! A palavra do dia era ${palavraRandom}.`)
-    } else if (letrasCertas < 5 && linhaAtual < 4){
+        } else if (letrasCertas < 5 && linhaAtual < 4){
         linhaAtual++
-        console.log(linhaAtual)
+        console.log(`Essa foi a ${linhaAtual}ª tentativa. Nela, você acertou ${letrasCertas} letra(s).`)
         alert(`Não foi dessa vez. Você possui mais ${5 - linhaAtual} tentativa(s).`)
-        arrayPalavraAtual = []
-        console.log(arrayPalavraAtual)
         liberarProximaLinha()
-    } else {
+        } else {
         linhaAtual++
         alert(`Você não possui mais nenhuma tentativa.`)
-        arrayPalavraAtual = []
-        console.log(arrayPalavraAtual)
     }
+
+    letrasCertas = 0
+    
 }
 
 function liberarProximaLinha() {
-        for (let i = 0; i <= 6; i++) {
+        for (let i = 0; i <= 5; i++) {
         elementoLinhaAtual = document.getElementById(`linha${linhaAtual - 1}`+`campo${i}`)
-        console.log(`Linha atual ${elementoLinhaAtual}.`)
         elementoProximaLinha = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
-        console.log(`Próxima linha ${elementoProximaLinha}.`)
         elementoLinhaAtual.disabled = true;
         elementoProximaLinha.disabled = false;
     }   
