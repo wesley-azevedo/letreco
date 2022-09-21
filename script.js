@@ -30,11 +30,13 @@ function confirmar() {
 }
 
 function verificarLetras() {
+    let letrasCertas = 0
+
     //Verificação das letras comparando a palavra atual com a palavra randomizada.
     for (let i = 0; i < palavraRandomArray.length; i++) {
         let letra = (document.getElementById(`linha${linhaAtual}`+`campo${i}`).value).toLowerCase();
         let letraContida = palavraRandom.includes(`${letra}`)
-        let letrasCertas = 0     
+ 
                 
         document.getElementById(`linha${linhaAtual}`+`campo${i}`).style.color = 'black';
         document.getElementById(`${letra}`).style.color = 'black';
@@ -61,18 +63,17 @@ function verificarLetras() {
         linhaAtual++
         console.log(`Essa foi a ${linhaAtual}ª tentativa. Nela, você acertou ${letrasCertas} letra(s).`)
         alert(`Não foi dessa vez. Você possui mais ${5 - linhaAtual} tentativa(s).`)
+        letrasCertas = 0
         liberarProximaLinha()
         } else {
         linhaAtual++
         alert(`Você não possui mais nenhuma tentativa.`)
     }
-
-    letrasCertas = 0
     
 }
 
 function liberarProximaLinha() {
-        for (let i = 0; i <= 5; i++) {
+        for (let i = 0; i <= 4; i++) {
         elementoLinhaAtual = document.getElementById(`linha${linhaAtual - 1}`+`campo${i}`)
         elementoProximaLinha = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
         elementoLinhaAtual.disabled = true;
