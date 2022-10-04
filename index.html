@@ -26,11 +26,11 @@
       <div>  
         <table class="tabelaInputValores">
           <tr>
-            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo0"></td>
-            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo1"></td>
-            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo2"></td>
-            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo3"></td>
-            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo4"></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo0" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo1" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo2" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo3" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha0campo4" disabled></td>
           </tr>
           <tr>
             <td><input type="text" maxlength="1" class="inputValor" id="linha1campo0" disabled></td>
@@ -60,48 +60,56 @@
             <td><input type="text" maxlength="1" class="inputValor" id="linha4campo3" disabled></td>
             <td><input type="text" maxlength="1" class="inputValor" id="linha4campo4" disabled></td>
           </tr>
+          <tr>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha5campo0" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha5campo1" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha5campo2" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha5campo3" disabled></td>
+            <td><input type="text" maxlength="1" class="inputValor" id="linha5campo4" disabled></td>
+          </tr>
         </table>
       </div>
     </section>
     <section class="funcoes">
       <div>
         <input type="button" value="RESETAR" class="botaoFuncao" id="botaoResetar" onclick="resetar()">
-        <!-- <input type="button" value="APAGAR" class="botaoFuncao" id="botaoApagar"> -->
         <input type="button" value="CONFIRMAR" class="botaoFuncao" id="botaoConfirmar" onclick="confirmar()"> 
       </div>
     </section>
     <section class="teclado">
       <div>  
-        <input type="button" value="Q" class="letraTeclado" id="q">
-        <input type="button" value="W" class="letraTeclado" id="w">
-        <input type="button" value="E" class="letraTeclado" id="e">
-        <input type="button" value="R" class="letraTeclado" id="r">
-        <input type="button" value="T" class="letraTeclado" id="t">
-        <input type="button" value="Y" class="letraTeclado" id="y">
-        <input type="button" value="U" class="letraTeclado" id="u">
-        <input type="button" value="I" class="letraTeclado" id="i">
-        <input type="button" value="O" class="letraTeclado" id="o">
-        <input type="button" value="P" class="letraTeclado" id="p">
+        <input type="button" value="q" class="letraTeclado" onclick="cliqueLetra(`q`)" id="q">
+        <input type="button" value="w" class="letraTeclado" onclick="cliqueLetra(`w`)" id="w">
+        <input type="button" value="e" class="letraTeclado" onclick="cliqueLetra(`e`)" id="e">
+        <input type="button" value="r" class="letraTeclado" onclick="cliqueLetra(`r`)" id="r">
+        <input type="button" value="t" class="letraTeclado" onclick="cliqueLetra(`t`)" id="t">
+        <input type="button" value="y" class="letraTeclado" onclick="cliqueLetra(`y`)" id="y">
+        <input type="button" value="u" class="letraTeclado" onclick="cliqueLetra(`u`)" id="u">
+        <input type="button" value="i" class="letraTeclado" onclick="cliqueLetra(`i`)" id="i">
+        <input type="button" value="o" class="letraTeclado" onclick="cliqueLetra(`o`)" id="o">
+        <input type="button" value="p" class="letraTeclado" onclick="cliqueLetra(`p`)" id="p">
       </div>
       <div>  
-        <input type="button" value="A" class="letraTeclado" id="a">
-        <input type="button" value="S" class="letraTeclado" id="s">
-        <input type="button" value="D" class="letraTeclado" id="d">
-        <input type="button" value="F" class="letraTeclado" id="f">
-        <input type="button" value="G" class="letraTeclado" id="g">
-        <input type="button" value="H" class="letraTeclado" id="h">
-        <input type="button" value="J" class="letraTeclado" id="j">
-        <input type="button" value="K" class="letraTeclado" id="k">
-        <input type="button" value="L" class="letraTeclado" id="l">
+        <input type="button" value="a" class="letraTeclado" onclick="cliqueLetra(`a`)" id="a">
+        <input type="button" value="s" class="letraTeclado" onclick="cliqueLetra(`s`)" id="s">
+        <input type="button" value="d" class="letraTeclado" onclick="cliqueLetra(`d`)" id="d">
+        <input type="button" value="f" class="letraTeclado" onclick="cliqueLetra(`f`)" id="f">
+        <input type="button" value="g" class="letraTeclado" onclick="cliqueLetra(`g`)" id="g">
+        <input type="button" value="h" class="letraTeclado" onclick="cliqueLetra(`h`)" id="h">
+        <input type="button" value="j" class="letraTeclado" onclick="cliqueLetra(`i`)" id="j">
+        <input type="button" value="k" class="letraTeclado" onclick="cliqueLetra(`k`)" id="k">
+        <input type="button" value="l" class="letraTeclado" onclick="cliqueLetra(`l`)" id="l">
       </div>
       <div>  
-        <input type="button" value="Z" class="letraTeclado" id="z">
-        <input type="button" value="X" class="letraTeclado" id="x">
-        <input type="button" value="C" class="letraTeclado" id="c">
-        <input type="button" value="V" class="letraTeclado" id="v">
-        <input type="button" value="B" class="letraTeclado" id="b">
-        <input type="button" value="N" class="letraTeclado" id="n">
-        <input type="button" value="M" class="letraTeclado" id="m">
+        <input type="button" value="z" class="letraTeclado" onclick="cliqueLetra(`z`)" id="z">
+        <input type="button" value="x" class="letraTeclado" onclick="cliqueLetra(`x`)" id="x">
+        <input type="button" value="c" class="letraTeclado" onclick="cliqueLetra(`c`)" id="c">
+        <input type="button" value="v" class="letraTeclado" onclick="cliqueLetra(`v`)" id="v">
+        <input type="button" value="b" class="letraTeclado" onclick="cliqueLetra(`b`)" id="b">
+        <input type="button" value="n" class="letraTeclado" onclick="cliqueLetra(`n`)" id="n">
+        <input type="button" value="m" class="letraTeclado" onclick="cliqueLetra(`m`)" id="m">
+        <input type="button" value="APAGAR" class="tecladoApagar" id="botaoApagar" onclick="apagar()">
+        <input type="button" value="  para escrever, use os botões do teclado acima  " class="mensagemTeclado">
       </div>
     </section>
     <script src="script.js"></script>

@@ -42,6 +42,24 @@ body {
     margin: 3px;
 }
 
+.teclado{
+    border: solid 0.5px #363636;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+input.mensagemTeclado{
+    background-color: black;
+    border: solid 0.5px #363636;
+    border-radius: 5px;
+    height: 30px;
+    color: #a5a5a5;
+    text-transform: lowercase;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 input.letraTeclado{
     background-color: black;
     border: solid 0.5px #363636;
@@ -51,6 +69,22 @@ input.letraTeclado{
     color: #a5a5a5;
     text-transform: lowercase;
     cursor: pointer;
+}
+
+.tecladoApagar{
+    background-color: black;
+    border: solid 0.5px #363636;
+    border-radius: 5px;
+    width: 65px;
+    height: 30px;
+    color: #a5a5a5;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.tecladoApagar:hover{
+    background-color: white;
+    color:#161616;
 }
 
 input.letraTeclado:hover{
@@ -76,7 +110,12 @@ input.botaoFuncao:hover{
 
 input.botaoFuncao#botaoConfirmar:hover{
     background-color: #009f03;
-    color:#ffffff;
+    color: black;
+}
+
+input.botaoFuncao#botaoResetar:hover{
+    background-color: red;
+    color:rgb(2, 2, 2);
 }
 
 input.letraTeclado {

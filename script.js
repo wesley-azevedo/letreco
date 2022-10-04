@@ -9,6 +9,32 @@ let palavraRandomArray = palavraRandom.split('')
 //Linha atual que começa em 0
 let linhaAtual = Number(0)
 //Quantidade de letras certas que começa em 0
+let campoAtual = Number(0)
+
+function cliqueLetra(letra) {
+    console.log(letra)
+    document.getElementById(`linha${linhaAtual}`+`campo${campoAtual}`).value = letra
+    if (campoAtual <= 4) {
+        campoAtual++        
+    } else {
+        campoAtual = 0
+    }
+}
+
+function apagar() {
+    if (campoAtual < 4) {
+        document.getElementById(`linha${linhaAtual}`+`campo${campoAtual - 1}`).value = ''
+        campoAtual--        
+    } else {
+        document.getElementById(`linha${linhaAtual}`+`campo${campoAtual - 1}`).value = ''
+        campoAtual--
+    }
+}
+
+function resetar() {
+    location.reload();    
+}
+
 
 function confirmar() {
     //Array da palavra contida na tentatiava atual
@@ -59,32 +85,14 @@ function verificarLetras() {
     
     if (letrasCertas == 5) {
         alert(`Parabéns, você acertou! A palavra do dia era ${palavraRandom}.`)
-        } else if (letrasCertas < 5 && linhaAtual < 4){
+        } else if (letrasCertas < 5 && linhaAtual < 5){
         linhaAtual++
+        campoAtual = 0
         console.log(`Essa foi a ${linhaAtual}ª tentativa. Nela, você acertou ${letrasCertas} letra(s).`)
-        alert(`Não foi dessa vez. Você possui mais ${5 - linhaAtual} tentativa(s).`)
+        alert(`Não foi dessa vez. Você possui mais ${6 - linhaAtual} tentativa(s).`)
         letrasCertas = 0
-        liberarProximaLinha()
         } else {
-        linhaAtual++
+        linhaAtual = undefined
         alert(`Você não possui mais nenhuma tentativa.`)
-    }
-    
+    }    
 }
-
-function liberarProximaLinha() {
-        for (let i = 0; i <= 4; i++) {
-        elementoLinhaAtual = document.getElementById(`linha${linhaAtual - 1}`+`campo${i}`)
-        elementoProximaLinha = document.getElementById(`linha${linhaAtual}`+`campo${i}`)
-        elementoLinhaAtual.disabled = true;
-        elementoProximaLinha.disabled = false;
-    }   
-}
-
-function resetar() {
-    location.reload();    
-}
-
-//function apagar() {}
-
-//function cliqueTeclado() {}
