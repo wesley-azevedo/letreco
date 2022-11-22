@@ -46,6 +46,7 @@ body {
     border: solid 0.5px #363636;
     border-radius: 5px;
     margin-top: 10px;
+    width: 385px;
 }
 
 input.mensagemTeclado{
