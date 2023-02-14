@@ -1,4 +1,5 @@
-#let treco = "?"
+# let treco = "?"
+
 Este é um jogo de advinhar palavras criado usando HTML, CSS e JavaScript. O jogo consiste em acertar uma palavra com cinco letras em seis tentativas, usando um teclado clicável para digitar e confirmar a palavra escolhida.
 
 ## Pré-requisitos
